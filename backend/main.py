@@ -1,20 +1,26 @@
+import os
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
+from dotenv import load_dotenv
 from database import engine, get_db, Base
 from models import WikiArticle, Quiz, RelatedTopic
 from scraper import scrape_wikipedia, fetch_title
 from quiz_generator import generate_quiz
+
+load_dotenv()
 
 # creates tables on startup if they dont exist yet
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Wiki Quiz Generator")
 
-# need this or the frontend cant talk to the backend
+# CORS: allow frontend origin(s). Set ALLOWED_ORIGINS for production (e.g. https://your-app.vercel.app).
+_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://localhost:3000").strip().split(",")
+_origins = [o.strip() for o in _origins if o.strip()]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )

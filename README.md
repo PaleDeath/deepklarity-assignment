@@ -80,6 +80,23 @@ The app will open at `http://localhost:5173`. Make sure the backend is running o
 
 ---
 
+## Deploy frontend on Vercel
+
+Only the **frontend** runs on Vercel. The backend (FastAPI + PostgreSQL) needs to be hosted elsewhere (e.g. [Render](https://render.com), Railway, Fly.io) and must allow requests from your Vercel domain.
+
+1. Push your code to GitHub (you already have [PaleDeath/deepklarity-assignment](https://github.com/PaleDeath/deepklarity-assignment)).
+2. Go to [vercel.com](https://vercel.com), sign in, and click **Add New** → **Project**.
+3. Import the repo. Set **Root Directory** to `frontend` (so Vercel builds the React app).
+4. Under **Environment Variables**, add:
+   - **Name:** `VITE_API_URL`  
+   - **Value:** your backend API URL (e.g. `https://your-app.onrender.com`).  
+   No trailing slash.
+5. Deploy. Vercel will run `npm run build` and serve the `dist` folder.
+
+The frontend will call the backend using `VITE_API_URL`. If the backend is on Render, turn on CORS for your Vercel URL (e.g. `https://your-project.vercel.app`) in the backend.
+
+---
+
 ## Screenshots
 
 *(Drop in a few screenshots here for a quick visual of the app.)*

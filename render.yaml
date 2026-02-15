@@ -1,0 +1,27 @@
+# Backend + PostgreSQL for Wiki Quiz Generator.
+# In Render: New > Blueprint > Connect repo, then add env vars (see README).
+
+databases:
+  - name: wiki-quiz-db
+    databaseName: wiki_quiz
+    plan: free
+
+services:
+  - type: web
+    runtime: python
+    name: wiki-quiz-api
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: wiki-quiz-db
+          property: connectionString
+      - key: LLM_PROVIDER
+        value: groq
+      - key: GROQ_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
