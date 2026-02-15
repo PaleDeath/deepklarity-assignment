@@ -1,0 +1,181 @@
+{
+    "id": 1,
+    "url": "https://en.wikipedia.org/wiki/Alan_Turing",
+    "title": "Alan Turing",
+    "summary": "Alan Turing was a British mathematician, computer scientist, and cryptanalyst who is widely considered to be the father of theoretical computer science and artificial intelligence. He played a pivotal role in breaking German ciphers during World War II at Bletchley Park, most notably the Enigma machine. His work laid the groundwork for modern computing, including the concept of the Turing machine.",
+    "key_entities": {
+        "people": [
+            "Alan Turing",
+            "Christopher Morcom",
+            "Joan Clarke",
+            "Gordon Welchman"
+        ],
+        "organizations": [
+            "Government Code and Cypher School",
+            "National Physical Laboratory",
+            "University of Manchester",
+            "Royal Society"
+        ],
+        "locations": [
+            "Bletchley Park",
+            "London",
+            "Princeton University",
+            "Maida Vale"
+        ]
+    },
+    "sections": [
+        "Early life and education",
+        "University and work on computability",
+        "Cryptanalysis",
+        "Bombe",
+        "Hut 8 and Naval Enigma",
+        "Turingery",
+        "Early computers and the Turing test",
+        "Pattern formation and mathematical biology",
+        "Personal life",
+        "Conviction for indecency",
+        "Death",
+        "Government apology and pardon",
+        "Awards and honours"
+    ],
+    "quiz": [
+        {
+            "id": 1,
+            "question": "What theoretical concept did Alan Turing introduce that became a foundation of computer science?",
+            "options": [
+                "The Von Neumann architecture",
+                "The Turing machine",
+                "The lambda calculus",
+                "The Boolean algebra model"
+            ],
+            "answer": "The Turing machine",
+            "difficulty": "easy",
+            "explanation": "Alan Turing introduced the concept of the Turing machine in his 1936 paper, which formalized the concepts of algorithm and computation."
+        },
+        {
+            "id": 2,
+            "question": "Where did Alan Turing work on breaking German ciphers during World War II?",
+            "options": [
+                "MI5 headquarters in London",
+                "Bletchley Park",
+                "The Pentagon",
+                "Cambridge University"
+            ],
+            "answer": "Bletchley Park",
+            "difficulty": "easy",
+            "explanation": "Turing worked at Bletchley Park, the central site for British codebreakers during World War II, where he helped break the Enigma machine."
+        },
+        {
+            "id": 3,
+            "question": "What was the name of the electromechanical device Turing helped develop to decrypt Enigma messages?",
+            "options": [
+                "The Colossus",
+                "The Bombe",
+                "The ENIAC",
+                "The Difference Engine"
+            ],
+            "answer": "The Bombe",
+            "difficulty": "medium",
+            "explanation": "The Bombe was an electromechanical machine designed by Turing and Gordon Welchman that significantly sped up the process of breaking Enigma-encrypted messages."
+        },
+        {
+            "id": 4,
+            "question": "What test did Turing propose for evaluating a machine's ability to exhibit intelligent behavior?",
+            "options": [
+                "The Turing test",
+                "The Lovelace test",
+                "The Chinese Room test",
+                "The Voight-Kampff test"
+            ],
+            "answer": "The Turing test",
+            "difficulty": "easy",
+            "explanation": "Turing proposed the 'imitation game,' now known as the Turing test, where a human evaluator judges whether they are conversing with a human or a machine."
+        },
+        {
+            "id": 5,
+            "question": "At which American university did Turing obtain his PhD?",
+            "options": [
+                "Harvard University",
+                "MIT",
+                "Princeton University",
+                "Stanford University"
+            ],
+            "answer": "Princeton University",
+            "difficulty": "medium",
+            "explanation": "Turing obtained his PhD from Princeton University in 1938, where he studied under Alonzo Church and worked on ordinal logic."
+        },
+        {
+            "id": 6,
+            "question": "What was Turing convicted of in 1952 that led to his chemical castration?",
+            "options": [
+                "Espionage",
+                "Gross indecency",
+                "Treason",
+                "Fraud"
+            ],
+            "answer": "Gross indecency",
+            "difficulty": "medium",
+            "explanation": "Turing was prosecuted for homosexual acts, which were criminal offences in the United Kingdom at that time. He was convicted of gross indecency and chose chemical castration over imprisonment."
+        },
+        {
+            "id": 7,
+            "question": "In what year did the British government issue a formal public apology to Alan Turing?",
+            "options": [
+                "2001",
+                "2009",
+                "2013",
+                "2017"
+            ],
+            "answer": "2009",
+            "difficulty": "hard",
+            "explanation": "In 2009, British Prime Minister Gordon Brown made an official public apology on behalf of the British government for the way Turing was treated after the war."
+        },
+        {
+            "id": 8,
+            "question": "What area of biology did Turing contribute to with his work on morphogenesis?",
+            "options": [
+                "Genetics",
+                "Mathematical biology",
+                "Neuroscience",
+                "Evolutionary theory"
+            ],
+            "answer": "Mathematical biology",
+            "difficulty": "hard",
+            "explanation": "Turing's 1952 paper 'The Chemical Basis of Morphogenesis' proposed a mathematical model of pattern formation in biological systems, contributing to the field of mathematical biology."
+        },
+        {
+            "id": 9,
+            "question": "What was the official ruling on Turing's cause of death in 1954?",
+            "options": [
+                "Natural causes",
+                "Accident",
+                "Suicide",
+                "Murder"
+            ],
+            "answer": "Suicide",
+            "difficulty": "medium",
+            "explanation": "Turing died from cyanide poisoning. The inquest determined it was suicide, though some have speculated it may have been accidental."
+        },
+        {
+            "id": 10,
+            "question": "Which cipher system used by the German Navy was Turing specifically tasked with breaking at Hut 8?",
+            "options": [
+                "The Lorenz cipher",
+                "The ADFGVX cipher",
+                "Naval Enigma",
+                "The Purple cipher"
+            ],
+            "answer": "Naval Enigma",
+            "difficulty": "hard",
+            "explanation": "Turing headed Hut 8, the section at Bletchley Park responsible for breaking German Naval Enigma messages, which was critical for the Battle of the Atlantic."
+        }
+    ],
+    "related_topics": [
+        "Enigma machine",
+        "Bletchley Park",
+        "Turing test",
+        "Artificial intelligence",
+        "Turing machine"
+    ],
+    "created_at": "2026-02-15T14:30:00"
+}

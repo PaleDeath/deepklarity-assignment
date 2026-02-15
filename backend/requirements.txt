@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+requests
+beautifulsoup4
+lxml
+langchain
+langchain-google-genai
+langchain-groq
+google-generativeai
+python-dotenv

@@ -1,0 +1,16 @@
+# python stuff
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+backend/.env
+
+# node stuff
+node_modules/
+dist/
+.vite/
+
+# misc
+.DS_Store
+*.log
