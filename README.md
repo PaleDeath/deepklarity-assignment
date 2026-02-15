@@ -99,11 +99,13 @@ The frontend will call the backend using `VITE_API_URL`. If the backend is on Re
 
 ## Screenshots
 
-*(Drop in a few screenshots here for a quick visual of the app.)*
+<img width="1100" height="840" alt="image" src="https://github.com/user-attachments/assets/c32867b4-4712-41bc-9f9f-98bf6d892bcf" />
+<img width="1465" height="705" alt="image" src="https://github.com/user-attachments/assets/86aa07c9-40da-495d-a747-e477480d2b99" />
+<img width="1485" height="599" alt="image" src="https://github.com/user-attachments/assets/994dcccb-e9c1-45ec-9413-e71ffdc67736" />
+<img width="1100" height="840" alt="image" src="https://github.com/user-attachments/assets/1480abeb-e197-4f54-ad4b-ac45a8db0e87" />
 
-- **Tab 1 — Generate Quiz:** URL input, “Generate Quiz” button, and the quiz + related topics once it’s ready.
-- **Tab 2 — Past Quizzes:** Table of previous quizzes with title, question count, date (DD/MM/YYYY), and Details / Delete.
-- **Details modal:** Same quiz layout as on the generate tab (title, summary, entities, sections, questions with options and explanations, related topics).
+
+
 
 ---
 
