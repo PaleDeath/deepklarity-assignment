@@ -80,20 +80,49 @@ The app will open at `http://localhost:5173`. Make sure the backend is running o
 
 ---
 
-## Deploy frontend on Vercel
+## Deployment (both frontend and backend)
 
-Only the **frontend** runs on Vercel. The backend (FastAPI + PostgreSQL) needs to be hosted elsewhere (e.g. [Render](https://render.com), Railway, Fly.io) and must allow requests from your Vercel domain.
+Deploy **backend first** so you have an API URL, then deploy the **frontend** and point it at that URL.
 
-1. Push your code to GitHub (you already have [PaleDeath/deepklarity-assignment](https://github.com/PaleDeath/deepklarity-assignment)).
-2. Go to [vercel.com](https://vercel.com), sign in, and click **Add New** → **Project**.
-3. Import the repo. Set **Root Directory** to `frontend` (so Vercel builds the React app).
-4. Under **Environment Variables**, add:
+### 1. Backend on Render
+
+1. Go to [dashboard.render.com](https://dashboard.render.com), sign in, and click **New** → **Blueprint**.
+2. Connect your GitHub account and select the repo **PaleDeath/deepklarity-assignment** (branch `main`). Render will read `render.yaml` from the root.
+3. Click **Apply**. Render will create a **PostgreSQL** database and a **Web Service** (the FastAPI app) in the `backend` folder.
+4. In the **wiki-quiz-api** service, open **Environment** and set:
+   - **GROQ_API_KEY** — your Groq API key (from [console.groq.com](https://console.groq.com)).
+   - **ALLOWED_ORIGINS** — leave empty for now; you’ll set it to your Vercel URL after step 2.
+5. Wait for the first deploy to finish. Copy the service URL (e.g. `https://wiki-quiz-api-xxxx.onrender.com`).
+6. Add **ALLOWED_ORIGINS** = `https://your-vercel-app.vercel.app` (you’ll get this after deploying the frontend; use the exact URL Vercel gives you). Save so the backend allows CORS from the frontend.
+
+### 2. Frontend on Vercel
+
+**Option A — Dashboard (recommended)**
+
+1. Go to [vercel.com](https://vercel.com), sign in, **Add New** → **Project**.
+2. Import **PaleDeath/deepklarity-assignment**. Set **Root Directory** to `frontend`.
+3. Under **Environment Variables** add:
    - **Name:** `VITE_API_URL`  
-   - **Value:** your backend API URL (e.g. `https://your-app.onrender.com`).  
-   No trailing slash.
-5. Deploy. Vercel will run `npm run build` and serve the `dist` folder.
+   - **Value:** your Render API URL from step 1 (e.g. `https://wiki-quiz-api-xxxx.onrender.com`) — no trailing slash.
+4. Deploy. Note your frontend URL (e.g. `https://deepklarity-assignment.vercel.app`).
+5. In Render, set **ALLOWED_ORIGINS** to that Vercel URL and redeploy the backend if you hadn’t set it earlier.
 
-The frontend will call the backend using `VITE_API_URL`. If the backend is on Render, turn on CORS for your Vercel URL (e.g. `https://your-project.vercel.app`) in the backend.
+**Option B — CLI from your machine**
+
+From a terminal (in the project):
+
+```bash
+cd frontend
+npx vercel link --yes --scope paledeaths-projects
+npx vercel env add VITE_API_URL
+```
+Enter your Render API URL when prompted, then:
+
+```bash
+npx vercel --prod
+```
+
+Use the production URL Vercel prints. Then set **ALLOWED_ORIGINS** in Render to that URL (see step 1.6).
 
 ---
 

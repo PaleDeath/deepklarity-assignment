@@ -10,3 +10,4 @@ langchain-google-genai
 langchain-groq
 google-generativeai
 python-dotenv
+gunicorn

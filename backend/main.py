@@ -16,11 +16,9 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title="Wiki Quiz Generator")
 
 # CORS: allow frontend origin(s). Set ALLOWED_ORIGINS for production (e.g. https://your-app.vercel.app).
-_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://localhost:3000").strip().split(",")
-_origins = [o.strip() for o in _origins if o.strip()]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=_origins,
+    allow_origins=["*"],  # allow all capable of connecting (for now)
     allow_methods=["*"],
     allow_headers=["*"],
 )
